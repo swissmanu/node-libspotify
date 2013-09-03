@@ -157,6 +157,10 @@ void cb_image_loaded_album(sp_image *image, void *userdata) {
     const unsigned argc = 1;
     Local<Value> argv[argc] = { actualBuffer };
     callback->Call(callback, argc, argv);
+
+    // Clean up:
+    callback.Dispose();
+    sp_image_release(image);
 }
 
 /**
