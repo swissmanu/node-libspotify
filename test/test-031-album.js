@@ -33,8 +33,8 @@ exports.album = {
             var first = search.tracks[0];
             var album = first.album;
 
-            album.coverImage(function(buffer) {
-                test.ok(buffer.length > 0);
+            album.coverImage(function(error, buffer) {
+                test.ok(error === undefined);
                 return test.done();
             });
         });
@@ -46,8 +46,8 @@ exports.album = {
             var first = search.tracks[0];
             var album = first.album;
 
-            album.smallCoverImage(function(buffer) {
-                test.ok(buffer.length > 0);
+            album.smallCoverImage(function(error, buffer) {
+                test.ok(error === undefined);
                 return test.done();
             });
         });
@@ -59,8 +59,8 @@ exports.album = {
             var first = search.tracks[0];
             var album = first.album;
 
-            album.largeCoverImage(function(buffer) {
-                test.ok(buffer.length > 0);
+            album.largeCoverImage(function(error, buffer) {
+                test.ok(error === undefined);
                 return test.done();
             });
         });
